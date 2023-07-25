@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,600");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=VT323&display=swap");
+* {
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  list-style: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #262626;
+}
+/*barra de navegacion*/
+nav {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 15vh;
+  font-family: "Titillium Web";
+}
+.logo_nav {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1.2em;
+  margin-left: 5%;
+  transition: 0.5s;
+}
+/*aca tambien van transitions de el header*/
+.logo_nav:hover,
+.img_header img:hover {
+  transform: translate(3px, 3px);
+}
+/**/
+.logo_nav a {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+}
+.logo_nav img {
+  height: 15vh;
+}
+
+.content_nav {
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 600;
+}
+
+.content_nav * {
+  transition: all 0.35s ease;
+}
+
+.content_nav li {
+  display: inline-block;
+  list-style: outside none none;
+  margin: 0.5em 1em;
+  padding: 0;
+}
+
+.content_nav a {
+  padding: 0.5em 0.8em;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  font-size: 1.2em;
+}
+
+.content_nav a::before,
+.content_nav a::after {
+  content: "";
+  height: 14px;
+  width: 14px;
+  position: absolute;
+  transition: all 0.35s ease;
+  opacity: 0;
+}
+
+.content_nav a::before {
+  content: "";
+  right: 0;
+  top: 0;
+  border-top: 3px solid gold;
+  border-right: 3px solid gold;
+  transform: translate(-100%, 50%);
+}
+
+.content_nav a:after {
+  content: "";
+  left: 0;
+  bottom: 0;
+  border-bottom: 3px solid gold;
+  border-left: 3px solid gold;
+  transform: translate(100%, -50%);
+}
+
+.content_nav a:hover:before,
+.content_nav a:hover:after {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.content_nav a:hover {
+  color: goldenrod;
+}
+.nav_menu {
+  display: none;
+}
+/*header*/
+header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  margin-bottom: 5%;
+  font-family: "Titillium Web";
+}
+.text_header,
+.img_header {
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  cursor: default;
+  position: relative;
+}
+.text_header h1 {
+  color: goldenrod;
+  margin-bottom: 5%;
+  margin-top: 10%;
+}
+.text_header p {
+  font-size: 20px;
+  color: white;
+  line-height: 1.5;
+  font-weight: 100;
+  margin-bottom: 5%;
+  padding: 5%;
+}
+.text_header h3,
+.paquetes_option h3 {
+  font-size: 20px;
+  color: goldenrod;
+}
+.img_header img {
+  width: 50%;
+  mix-blend-mode: difference;
+  transition: 0.5s;
+}
+.img_header h2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+  font-size: 40px;
+  transition: 0.5s;
+}
+/*info*/
+.info {
+  margin-top: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+.info h2,
+.paquetes h2 {
+  color: goldenrod;
+  font-family: "Titillium Web";
+  font-weight: 600;
+  font-size: 30px;
+  margin-bottom: 3%;
+}
+.info video {
+  width: 80%;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.info video:hover {
+  cursor: pointer;
+  border: 3px solid gold;
+  transform: scale(1.1);
+}
+.info p {
+  margin-top: 3%;
+  text-align: center;
+  width: 50%;
+  font-size: 20px;
+  color: white;
+  font-family: "Titillium Web";
+  line-height: 1.5;
+  font-weight: 100;
+}
+/*informacion de paquetes*/
+main {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  overflow: hidden;
+}
+.paquetes {
+  transition: 0.5s;
+  cursor: default;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  flex-direction: column;
+  background-color: black;
+  font-family: "Titillium Web";
+}
+.paquetes h2 {
+  margin-top: 5%;
+}
+.golden_text {
+  color: goldenrod;
+}
+.paquetes_section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.paquetes_option {
+  margin: 5%;
+  width: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 5px solid goldenrod;
+  border-radius: 20px;
+}
+.paquetes_option img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+  background-color: white;
+  transition: 0.5s;
+}
+.paquetes_option img:hover {
+  transform: rotate(20deg);
+  border: 3px solid gold;
+}
+.paquetes_option ul {
+  margin-top: 5%;
+  width: 70%;
+  text-align: start;
+  margin-bottom: 5%;
+}
+.paquetes_option ul > li {
+  color: white;
+}
+.paquetes p:not(#First_P) {
+  width: 70%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: white;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 100;
+  text-align: start;
+}
+#First_P {
+  color: white;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 100;
+}
+/*iguala y proyecto*/
+.iguala_proyecto {
+  margin-top: 5%;
+  width: 100%;
+}
+.background {
+  background-color: black;
+}
+.iguala_proyecto h2 {
+  margin-left: 5%;
+  margin-bottom: 3%;
+  color: goldenrod;
+  font-family: "Titillium Web";
+}
+.cards {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.card {
+  width: 30%;
+  border: 3px solid goldenrod;
+  border-radius: 10px;
+  margin: 3% 1.5%;
+  text-align: center;
+  color: white;
+  font-family: "Titillium Web";
+  transition: 0.5s;
+}
+.card:hover {
+  cursor: default;
+  transform: scale(1.1);
+}
+.card img {
+  width: 100%;
+  height: 30%;
+  border-radius: 10px 10px 0px 0px;
+}
+.card small {
+  color: rgba(255, 255, 255, 0.5);
+}
+.card ul {
+  text-align: start;
+  margin: 3% auto;
+}
+.card ul > li {
+  margin: 3% auto;
+}
+.card h3:not(.paquete) {
+  color: rgb(13, 202, 13);
+  margin-bottom: 5%;
+}
+
+.card2 img {
+  width: 100%;
+  height: 30%;
+}
+.paquete {
+  color: goldenrod;
+  margin: 3% auto;
+}
+.aviso {
+  color: goldenrod;
+}
+/*carrusel*/
+.carrusel {
+  display: flex;
+  align-items: center;
+  background-color: #262626;
+}
+
+.carrusel-items {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding: 30px 0px;
+}
+
+.carrusel-item {
+  min-width: 300px;
+  max-width: 300px;
+  height: 200px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.carrusel-item img {
+  width: 80%;
+  height: 100%;
+}
+
+.carrusel-item:hover {
+  transform: scale(1.2);
+}
+.clientes {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 100%;
+  text-align: center;
+  color: goldenrod;
+  font-family: "Titillium Web";
+}
+/*boton whatsapp*/
+.btn-whatsapp {
+  width: 10%;
+  position: fixed;
+  top: 85%;
+  left: 90%;
+}
+.btn-whatsapp img {
+  width: 100%;
+  transition: 0.5s;
+}
+.btn-whatsapp img:hover {
+  transform: scale(0.8);
+}
+/*footer*/
+footer {
+  position: relative;
+  width: 100%;
+  margin-top: 5%;
+  background-color: black;
+  height: 30vh;
+}
+.redes {
+  margin-top: 3%;
+  display: flex;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.redes li {
+  list-style: none;
+}
+
+.redes li a {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  text-align: center;
+  line-height: 80px;
+  font-size: 35px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #fff;
+  z-index: 1;
+}
+
+.redes li a .icon {
+  position: relative;
+  color: #262626;
+  transition: 0.5s;
+  z-index: 3;
+}
+
+.redes li a:hover .icon {
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+.redes li a:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: 0.5s;
+  z-index: 2;
+}
+
+.redes li a:hover:before {
+  top: 0;
+}
+
+.redes li:nth-child(1) a:before {
+  background: #3b5999;
+}
+
+.redes li:nth-child(2) a:before {
+  background-image: -webkit-linear-gradient(
+    60deg,
+    rgb(250, 197, 83) 20%,
+    rgb(209, 29, 209) 80%
+  );
+}
+
+.redes li:nth-child(3) a:before {
+  background: #0db907;
+}
+@media (max-width: 912px) {
+  .content_nav {
+    display: none;
+  }
+  .nav_menu {
+    display: block;
+    width: 10%;
+    margin-left: 5%;
+  }
+  .nav_menu:hover {
+    cursor: pointer;
+  }
+  .nav_menu img {
+    width: 100%;
+  }
+  .active {
+    position: absolute;
+    top: 15vh;
+    width: 100%;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  header {
+    height: 100%;
+  }
+  .text_header,
+  .img_header {
+    width: 100%;
+  }
+  .paquetes_option {
+    width: 90%;
+  }
+  .card {
+    width: 90%;
+    margin: 3% 5%;
+  }
+  .btn-whatsapp {
+    width: 17%;
+    left: 84%;
+  }
+}
+@media (max-width: 280px) {
+  .btn-whatsapp {
+    top: 80%;
+    left: 70%;
+  }
+}
